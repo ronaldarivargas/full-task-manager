@@ -1,7 +1,7 @@
 <?php
 
 $host = 'localhost';
-$port = '5433';
+$port = '5432';
 $user = 'postgres';
 $pass = '1234';
 $db_name = 'task_tool';

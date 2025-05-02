@@ -5,7 +5,7 @@ session_start();
 session_destroy();
 //unset( $_SESSION["user_id"] );
 //var_dump($_SESSION);
-header('Location: /task-manager/index.php');
+header('Location: /full-task-manager/index.php');
 exit;
 
 ?>
