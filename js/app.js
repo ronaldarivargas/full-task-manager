@@ -40,23 +40,15 @@ document.addEventListener('DOMContentLoaded', () => {
                 console.log(task);
 
                 const li = document.createElement('li');
-                if (task.complete) {
-                    li.className = 'task-ready';
-                    li.innerHTML =
-                    '<span>' + task.text + '</span>';
-                }
-                else {
-                    li.innerHTML =
+                li.className='flex justify-between items-center bg-gray-100 px-4 py-2 rounded';
+                li.innerHTML =
                     '<span>' + task.text + '</span>' +
-                    '<div>' +
-                    '<button class="complete-btn" onclick="completeTask(' + task.id + ')">' +
-                    'Completar </button>' +
-                    '<button class="edit-btn" onclick="editTask(' + task.id + ')">' +
+                    '<div class="space-x-2">' +
+                    '<button class="text-blue-600 hover:underline" onclick="editTask(' + task.id + ')">' +
                     'Editar </button>' +
-                    '<button class="delete-btn" onclick="deleteTask(' + task.id + ')">' +
+                    '<button class="text-red-600 hover:underline" onclick="deleteTask(' + task.id + ')">' +
                     'Eliminar </button>' +
                     '</div>';
-                }
                 taskList.appendChild(li);
             }
 
@@ -77,15 +69,6 @@ document.addEventListener('DOMContentLoaded', () => {
             isEditing = true;
             editingId = et.id;
         }
-    }
-
-
-    window.completeTask = function (id) {
-        tasks = tasks.map(task =>
-            task.id === id ? {
-                ...task, complete: true
-            } : task);
-        renderTasks();
     }
 
 });
